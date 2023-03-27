@@ -53,7 +53,7 @@
       cleanOldTiles: function() {
         for(index in this.floorTiles) {
           if(this.floorTiles[index].x <= -this.floorTiles[index].width) {
-            this.floorTiles.splice(index, 10);
+            this.floorTiles.splice(index, 1);
             this.tilesPassed++;
             if(this.tilesPassed % 3 == 0 && this.speed < this.maxSpeed) {
               this.speed++;
