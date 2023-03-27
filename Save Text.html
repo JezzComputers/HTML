@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Save Text</title>
+    <style>
+        body {
+            background: black;
+        }
+        
+        div#messageArea {
+            position: absolute;
+            top: 100px;
+            left: 1000px;
+            color: black;
+            font-size: 2em;
+        }
+        
+        form {
+            position: absolute;
+            top: 100px;
+            right: 1000px;
+            padding: 15px;
+            background-color: skyblue;
+        }
+        
+        form input {
+            background-color: skyblue;
+            border-color: black;
+            font-size: 2em;
+        }
+        
+        table {
+            position: absolute;
+            left: 200px;
+            top: 100px;
+            border-spacing: 0px;
+        }
+        
+        td {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="board">
+        <div id="messageArea"></div>
+        <table>
+        </table>
+        <form>
+            <input type="text" id="guessInput" placeholder="Text">
+        </form>
+    </div>
+    <script src="battleship.js"></script>
+</body>
+
+</html>

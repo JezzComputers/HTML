@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Noughts and Crosses</title>
+    <style>
+        .row div {
+            padding: 20px;
+            border: 10px solid rgb(0, 0, 187);
+            height: 100px;
+            width: 100px;
+            background-color: rgb(110, 255, 110);
+            color: RED;
+            text-align: center;
+            font-size: 100px;
+            float: left;
+        }
+        
+        .row {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    Click to play Noughts and Crosses.<br/>
+    <div>
+        <div class="row">
+            <div id="0_0" onclick="place(this)"></div>
+            <div id="1_0" onclick="place(this)"></div>
+            <div id="2_0" onclick="place(this)"></div>
+        </div>
+        <div class="row">
+            <div id="0_1" onclick="place(this)"></div>
+            <div id="1_1" onclick="place(this)"></div>
+            <div id="2_1" onclick="place(this)"></div>
+        </div>
+        <div class="row">
+            <div id="0_2" onclick="place(this)"></div>
+            <div id="1_2" onclick="place(this)"></div>
+            <div id="2_2" onclick="place(this)"></div>
+        </div>
+    </div>
+    <script>
+        var currentPlayer = "O";
+        var won = false;
+
+        function place(box) {
+            if (box.innerText != "" || won) return;
+            box.innerText = currentPlayer;
+            currentPlayer == "O" ? currentPlayer = "X" : currentPlayer = "O";
+            checkGameBoard();
+        }
+
+        function checkGameBoard() {
+            for (var i = 0; i <= 2; i++) {
+                checkWinner(document.getElementById(i + "_0").innerText,
+                    document.getElementById(i + "_1").innerText,
+                    document.getElementById(i + "_2").innerText);
+                checkWinner(document.getElementById("0_" + i).innerText,
+                    document.getElementById("1_" + i).innerText,
+                    document.getElementById("2_" + i).innerText);
+            }
+            checkWinner(document.getElementById("0_0").innerText,
+                document.getElementById("1_1").innerText,
+                document.getElementById("2_2").innerText);
+            checkWinner(document.getElementById("0_2").innerText,
+                document.getElementById("1_1").innerText,
+                document.getElementById("2_0").innerText);
+        }
+
+        function checkWinner(first, second, third) {
+            if (first != "" && first == second && first == third) {
+                alert("Winner!");
+                won = true;
+            }
+        }
+    </script>
+</body>
+
+</html>
