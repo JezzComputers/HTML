@@ -24,7 +24,7 @@
       tilesPassed: 0,
       autoScroll: true,
       floorTiles: [
-        new floor(10, 140)
+        new floor(0, 140)
       ],
       stop: function() {
         this.autoScroll = false;
@@ -53,7 +53,7 @@
       cleanOldTiles: function() {
         for(index in this.floorTiles) {
           if(this.floorTiles[index].x <= -this.floorTiles[index].width) {
-            this.floorTiles.splice(index, 1);
+            this.floorTiles.splice(index, 10);
             this.tilesPassed++;
             if(this.tilesPassed % 3 == 0 && this.speed < this.maxSpeed) {
               this.speed++;
