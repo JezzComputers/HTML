@@ -45,6 +45,7 @@
                 var result = snake.move();
                 if (result == "gameover") {
                     alert("You lose! player Scored: " + game.score);
+                    location.reload();
                     return;
                 }
                 graphics.drawGame();
